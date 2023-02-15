@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e811cec76386f4190c47845d3ded76, type: 3}
+  m_Name: SoldierSpawnConfiguration_SoldierSpawnData
+  m_EditorClassIdentifier: 
+  soldierPrefab: {fileID: 4828829424172848765, guid: 3733b39fef976c24a8436ce6487b4cf0,
+    type: 3}
+  <SpwnThrowForce>k__BackingField: 100
+  <IsThisSpawner>k__BackingField: 0
