@@ -38,7 +38,7 @@ public class SoldierPool : MonoBehaviour
     }
     public GameObject GetAnItemFromPool(int soldierCount)
     {
-        List<GameObject> requiredSoldiers= new List<GameObject>();
+     
         for (int i = 0; i < poolList.Count; i++)
         {
             if (!poolList[i].gameObject.activeInHierarchy)

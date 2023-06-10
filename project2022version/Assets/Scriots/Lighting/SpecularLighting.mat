@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpecularLighting
+  m_Shader: {fileID: 4800000, guid: 00f446d378ae70740beef1f495aac937, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetalTex:
+        m_Texture: {fileID: 2800000, guid: 299b4ab553c263e47a60ddbf16bb67e5, type: 3}
+        m_Scale: {x: 0, y: 0}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _EmissionSlider: 0.117
+    - _Gloss: 0.767
+    - _Glossiness: 0.236
+    - _Metallic: 0.687
+    - _Spec: 0.129
+    m_Colors:
+    - _Color: {r: 0.19037023, g: 0.4339623, b: 0.24241868, a: 0.54901963}
+    - _SpecColor: {r: 0.5, g: 0.1957547, b: 0.44199824, a: 1}
+  m_BuildTextureStacks: []

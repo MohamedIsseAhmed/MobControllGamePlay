@@ -31,7 +31,7 @@ public class CannonController : MonoBehaviour
     private void Instance_OnCollidedEvent(int soliderCount, Vector3 _spawnPoint)
     {
         print("count" + soliderCount);
-        SoldierSpawner.Instance.SpawnSoldier(soliderCount, _spawnPoint); 
+        SoldierSpawner.Instance.SpawnSoldier(soliderCount, _spawnPoint,false); 
     }
     void Update()
     {
@@ -77,7 +77,7 @@ public class CannonController : MonoBehaviour
                 hasToResize = false;
                 if (soldierSpawnData.IsThisSpawner)
                 {
-                   SoldierSpawner.Instance.SpawnSoldier(1,spawnPoint.position);
+                   SoldierSpawner.Instance.SpawnSoldier(1, spawnPoint.position,false);
                 }
               
                 yield break;

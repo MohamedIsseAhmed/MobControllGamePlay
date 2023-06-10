@@ -16,50 +16,54 @@ public class SoldierSpawner : MonoBehaviour
         Instance = this;
 
     }
-    public void SpawnSoldier(int soldierCount, Vector3 _spawnPoint,bool _collidedWithTransapentWall=false)
+    public void SpawnSoldier(int soldierCount, Vector3 _spawnPoint,bool _collidedWithTransapentWall)
     {
          this.collidedWithTransapentWall = _collidedWithTransapentWall;
-         SpawnSoldierCoroutine(soldierCount, _spawnPoint, collidedWithTransapentWall);
+         SpawnSoldierCoroutine(soldierCount, _spawnPoint, _collidedWithTransapentWall);
     }
-    private void SpawnSoldierCoroutine(int soldierCount,Vector3 _spawnPoint, bool collidedWithTransapentWall = false)
+    private void SpawnSoldierCoroutine(int soldierCount,Vector3 _spawnPoint, bool _collidedWithTransapentWall)
     {
 
         for (int i = 0; i < soldierCount; i++)
         {
-           
-            //if (i % 2 == 0 && i > 0)
-            //{
-            //    xOffset += xOffset;
-            //    //zOffset += zOffset;
-            //}
-            //else
-            //{
-            //    if (i!=0)
-            //    {
-            //        print("Make+-");
-            //        //xOffset *= xOffset>0?-1:-1;
-            //    }
 
+            if (i % 2 == 0 && i > 0 && _collidedWithTransapentWall)
+            {
+                if (xOffset < 0)
+                {
+                    xOffset = xOffset * -1;
+                }
+               
+                xOffset += 9;
+                print("xOffset" + xOffset);
+                zOffset += 2.5f;
+            }
+            else
+            {
+                if (i != 0 && _collidedWithTransapentWall)
+                {
+                    xOffset = xOffset * -1;
+                    print("Make+-");
+                    //xOffset *= xOffset > 0 ? -1 : -1;
+                }
+            }
 
-            //}
+                //}
             GameObject soldier = SoldierPool.instance.GetAnItemFromPool(i);
-            if (collidedWithTransapentWall)
+            if (_collidedWithTransapentWall)
             {
                 soldier.transform.position = _spawnPoint + new Vector3(xOffset, 0, zOffset);
             }
             else
             {
-                soldier.transform.position = _spawnPoint;
+               soldier.transform.position = _spawnPoint+ new Vector3(0, 1, 0);
             }
 
             soldier.GetComponent<Rigidbody>().AddForce(Vector3.forward * soldierSpawnData.SpwnThrowForce);
             soldier.GetComponent<UnitSoldier>().SetDirection(Vector3.forward);
-            if (collidedWithTransapentWall)
-            {
-                xOffset += xOffset;
-            }
+           
             print("i" + i);
-            print("xOffset" + xOffset);
+            
         }
 
         // int i = 0;
@@ -79,7 +83,7 @@ public class SoldierSpawner : MonoBehaviour
 
     }
 
-    public void ResetXAndZOffsetValues()
+    private void ResetXAndZOffsetValues()
     {
         this.collidedWithTransapentWall = false;
         xOffset = 9;
